@@ -1,3 +1,3 @@
 exports.new = (req, res) => {
-    res.render('new');
+  res.render("new");
 };
