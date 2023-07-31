@@ -6,6 +6,10 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+// Database
+const db = require('./config/db')
+db.connect();
+
 // Static File
 app.use(express.static(path.join(__dirname, "public")));
 
