@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const newController = require('../app/controllers/newControllers');
+const ControllerNew = require('../app/controllers/ControllerNew');
 
 // [GET] url="/new/"
-router.get('/', newController.new);
+router.get('/', ControllerNew.new);
 
 module.exports = router;

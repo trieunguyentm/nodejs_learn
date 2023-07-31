@@ -18,10 +18,8 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
 // Route
-const homeRoutes = require('./routes/homeRoutes');
-const newRoutes = require('./routes/newRoutes');
-app.use('/new', newRoutes);
-app.use('/', homeRoutes);
+const route = require("./routes/index")
+route(app)
 
 // Server
 app.listen(port, () => {
