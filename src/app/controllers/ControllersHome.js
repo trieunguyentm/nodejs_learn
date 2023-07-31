@@ -1,5 +1,6 @@
 const Course = require('../models/Course');
 const { multipleMongooseToObject } = require("../../utils/mongoose");
+
 // [GET] url="/"
 exports.home = (req, res, next) => {
   Course.find({})
