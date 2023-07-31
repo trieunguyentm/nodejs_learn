@@ -6,6 +6,9 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+// Sử dụng middleware để xử lý dữ liệu form
+app.use(express.urlencoded({ extended: true }));
+
 // Connect Database
 const db = require('./config/db')
 db.connect();
