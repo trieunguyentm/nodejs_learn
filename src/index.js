@@ -1,4 +1,5 @@
 const express = require("express");
+const methodOverride = require('method-override')
 const { engine } = require("express-handlebars");
 const path = require("path");
 
@@ -8,6 +9,9 @@ const port = 3000;
 
 // Sử dụng middleware để xử lý dữ liệu form
 app.use(express.urlencoded({ extended: true }));
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
 
 // Connect Database
 const db = require('./config/db')
@@ -22,6 +26,9 @@ app.engine(
   engine({
     extname: ".hbs",
     defaultLayout: "main",
+    helpers: {
+      sum: (a, b) => a + b,
+    }
   }),
 );
 app.set("view engine", "hbs");

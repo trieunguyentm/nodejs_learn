@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên khóa học</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Thời gian tạo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each courses}}
+    <tr>
+      <th scope="row">{{sum @index 1}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+      <td>{{this.createdAt}}</td>
+      <td>
+        <a href="/courses/my-course/{{this._id}}/edit">
+          <button type="button" class="btn btn-link">Sửa khóa học</button>
+        </a>
+        <a href="courses/my-course/{{this._id}}/delete">
+          <button type="button" class="btn btn-link">Xóa khóa học</button>
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
