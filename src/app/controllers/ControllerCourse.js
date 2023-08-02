@@ -46,9 +46,15 @@ exports.editMyCourse = (req, res, next) => {
 
 }
 
-// [GET] url="/courses/my-course/:id/delete"
+// [DELETE] url="/courses/:id/delete"
 exports.deleteMyCourse = (req, res, next) => {
-    res.send('delete')
+    Courses.deleteOne(
+        {
+            _id: req.params.id,
+        }
+    )
+        .then(() => res.redirect("/courses/my-course"))
+        .catch(next)
 }
 
 // [PUT] url="/courses/:id/update"

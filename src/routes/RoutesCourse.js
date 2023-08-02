@@ -8,8 +8,8 @@ router.get("/create", ControllersCourse.createCourse)
 router.put("/:id/update", ControllersCourse.updateCourse)
 // [GET] url="/courses/my-course/:id/edit"
 router.get("/my-course/:id/edit", ControllersCourse.editMyCourse)
-// [GET] url="/courses/my-course/:id/delete"
-router.get("/my-course/:id/delete", ControllersCourse.deleteMyCourse)
+// [DELETE] url="/courses/:id/delete"
+router.delete("/:id/delete", ControllersCourse.deleteMyCourse)
 // [GET] url="/courses/my-course"
 router.get("/my-course", ControllersCourse.myCourse)
 // [POST] url="/courses/store"
